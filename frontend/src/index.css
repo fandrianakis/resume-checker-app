@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,5 +7,28 @@
 @layer base {
   body {
     @apply antialiased;
+    font-family: 'Poppins', sans-serif;
   }
-} 
+}
+
+/* Adjust header colors */
+h1, h2, h3, h4, h5, h6 {
+  color: #4a4a4a; /* Softer dark gray */
+}
+
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 8s ease infinite;
+}
