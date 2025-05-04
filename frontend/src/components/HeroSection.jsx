@@ -7,7 +7,7 @@ const HeroSection = ({ onFileChange, onSubmit, file, loading, error }) => (
     <div className="container mx-auto px-6 text-center md:text-left relative z-10">
       <div className="flex flex-col md:flex-row items-center">
         <div className="md:w-1/2">
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-blue-800 via-blue-600 to-blue-400 bg-clip-text text-transparent drop-shadow-md">
             Είναι το βιογραφικό σας αρκετά καλό;
           </h1>
           <p className="text-lg md:text-xl font-light mb-6">
