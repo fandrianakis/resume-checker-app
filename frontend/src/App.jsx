@@ -67,7 +67,7 @@ const App = () => {
         error={error}
       />
       <FeaturesSection />
-      <main id="results-section" className="relative flex flex-col items-center justify-center px-4 mt-10 overflow-hidden">
+      <main id="results-section" className="relative flex flex-col items-center justify-center px-4 mt-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-gray-100 to-blue-50 animate-gradient-x"></div>
         <div className="relative z-10">
           {analysis && <ResumeResults data={analysis} />}
