@@ -1,0 +1,159 @@
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.loader-content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.anchor-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.anchor-icon {
+  width: 100%;
+  height: 100%;
+  color: #0369a1;
+  animation: floatAnchor 2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 6px rgba(3, 105, 161, 0.3));
+}
+
+.waves {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.wave {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border: 2px solid #0369a1;
+  border-radius: 45%;
+  opacity: 0;
+}
+
+.wave:nth-child(1) {
+  animation: wave 3s linear infinite;
+  border-color: rgba(3, 105, 161, 0.3);
+}
+
+.wave:nth-child(2) {
+  animation: wave 3s linear infinite 1s;
+  border-color: rgba(3, 105, 161, 0.2);
+}
+
+.wave:nth-child(3) {
+  animation: wave 3s linear infinite 2s;
+  border-color: rgba(3, 105, 161, 0.1);
+}
+
+.loader-text {
+  color: #0369a1;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes floatAnchor {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  25% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(5deg);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .loader-content {
+    padding: 2rem;
+  }
+
+  .anchor-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .waves {
+    width: 120px;
+  }
+
+  .wave {
+    width: 120px;
+    height: 120px;
+  }
+
+  .loader-text {
+    font-size: 1rem;
+  }
+} 

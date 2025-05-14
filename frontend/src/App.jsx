@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import FeaturesSection from "./components/FeaturesSection";
 import ResumeResults from "./components/ResumeResults";
+import AnchorLoader from "./components/AnchorLoader";
 
 const App = () => {
   const [file, setFile] = useState(null);
@@ -58,6 +59,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f3f4f6] to-[#e0e7ef] font-sans">
+      {loading && <AnchorLoader />}
       <Header />
       <HeroSection
         onFileChange={handleFileChange}
